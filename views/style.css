@@ -1,0 +1,12 @@
+/* <style type="text/css">
+
+</style> */
+
+.img{
+    background: url('../assets/img/bg.jpg') !important;
+}
+
+.navbar-nav{
+    position: absolute;
+    right: 0px;
+}

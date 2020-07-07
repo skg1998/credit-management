@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h1>Hello User</h1>
+  <!-- <% for(let i = 0; i < users.length; i++) { %>
+    <%  if(users[i].id) { %>
+    <h3><%= users[i].name %></h3>
+    <% } %>
+  <% } %> -->
+  <p>welcome to you dashboard !</p>
+  <div class="card m-3">
+    <div class="card-body">
+      <form action="/api/transfer/credit_transfer" method="get">
+        <div class="form-group">
+          <input type="number" name="Transfer_credit" placeholder="Enter Credit " class="form-control m-2" >
+          <select name="recevier" class="form-control m-2">
+            <option>Select Recevier</option>
+            <% for(let i = 0; i < users.length; i++) { %>
+              <option><%= users[i].name %></option>
+            <% } %>
+          </select>
+          <button type="submit" class="btn btn-outline-secondary m-2" style="width: 100%;">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
