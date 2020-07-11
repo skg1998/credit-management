@@ -28,7 +28,7 @@ DUMMY_USERS = [
     },
     {
         id:'4',
-        name:'kumar sanu',
+        name:'kumar',
         email:'sanu@gmail.com',
         current_credit:12,
         transfer_credit:12,
