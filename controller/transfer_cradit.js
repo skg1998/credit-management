@@ -14,7 +14,6 @@ const creaditTransferData= (req,res)=>{
     
     newCredit.save().then(function(){
         TransferCradit.find().then(user=>{
-            console.log(user)
             res.render('transfer_cradit',{transfers :user});
         })
     });

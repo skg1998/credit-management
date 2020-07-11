@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const userShema = new Schema({
    id:{
-       type:String,
-       required:true
+       type:String
    },
    name:{
        type:String,
@@ -18,7 +17,7 @@ const userShema = new Schema({
        type:Number,
        required:true
    },
-   Transfer_credit:{
+   transfer_credit:{
         type:Number,
         required:true
     },

@@ -6,30 +6,29 @@
     </div>
     <div class="user">
         <% for(let i = 0; i < transfers.length; i++) { %>
-            <% console.log("the value of event.name hidden field", transfers.id) %>
-                <div class="card " style="margin: 5px;">
-                    <div class="card-body">
-                        <article>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <p><b> Sender_Id:</b> <%=transfers[i].id %></p>
-                                </div>
-                                <div class="col-md-2">
-                                    <p> <b>Sender:</b> <%=transfers[i].sender %></p>
-                                </div>
-                                <div class="col-md-2">
-                                    <p><b>Recevier:</b> <%= transfers[i].recevier %></p>
-                                </div>
-                                <div class="col-md-2">
-                                    <p><b>Transfer_credit: </b> <%= transfers[i].Transfer_credit %></p>
-                                </div>
-                                <div class="col-md-3">
-                                   <p> <b>Transfer_Date:</b> <%= transfers[i].Transfer_date %> </p>
-                                </div>
+            <div class="card " style="margin: 5px;">
+                <div class="card-body">
+                    <article>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <p><b> Sender_Id:</b> <%=transfers[i].id %></p>
                             </div>
-                        </article>
-                    </div>
+                            <div class="col-md-2">
+                                <p> <b>Sender:</b> <%=transfers[i].sender %></p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><b>Recevier:</b> <%= transfers[i].recevier %></p>
+                            </div>
+                            <div class="col-md-2">
+                                <p><b>Transfer_credit: </b> <%= transfers[i].Transfer_credit %></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p> <b>Transfer_Date:</b> <%= transfers[i].Transfer_date %> </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+            </div>
         <% } %>
     </div>
 </div>

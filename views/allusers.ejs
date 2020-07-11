@@ -6,11 +6,11 @@
     </div>
     <div class="user">
         <% for(let i = 0; i < users.length; i++) { %>
-            <a href="/api/users/<%= users[i].id %>">
+            <a href="/api/users/<%= users[i].id %>" style="text-decoration: none !important;">
                 <div class="card " style="margin: 5px;">
                     <div class="card-body">
                         <article>
-                            <div class="card" style="margin-bottom: 15px !important;">
+                            <div class="card" style="margin-bottom: 15px !important; border-radius: 25px !important; padding-left: 40px;">
                                 <div class="card-body" style="padding: 5px !important;">
                                     <h2 >User Name: <%= users[i].name %></h1>
                                 </div>
@@ -26,7 +26,7 @@
                                     <p>Transfer_credit: <%= users[i].transfer_credit %></p>
                                 </div>
                                 <div class="col-md-3">
-                                     <p>Created_Date: <%= users[i].transfer_date %></p>
+                                     <p>Created_Date: <%= users[i].date %></p>
                                 </div>
                             </div>
                         </article>

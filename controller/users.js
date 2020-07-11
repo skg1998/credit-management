@@ -4,88 +4,98 @@ const User = require('../modal/user');
 DUMMY_USERS = [
     {
         id:'1',
-        name:'sahil',
+        name:'sahil gupta',
         email:'sahil@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     },
     {
         id:'2',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'test2',
+        email:'test@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     },
      {
         id:'3',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'sunil kumar',
+        email:'kumarl@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     },
     {
         id:'4',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'kumar sanu',
+        email:'sanu@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     }, {
         id:'5',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'vijay Gupta',
+        email:'gupta123@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     }, {
         id:'6',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'test123',
+        email:'test123@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     }, {
         id:'7',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'rahul',
+        email:'rahul@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     }, {
         id:'8',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'mannu',
+        email:'mannu@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     },
     {
         id:'9',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'sourya',
+        email:'sourya@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     },
     {
         id:'10',
-        name:'sahil',
-        email:'sahil@gmail.com',
+        name:'shubam',
+        email:'shubam123@gmail.com',
         current_credit:12,
-        transfer_credit:12
+        transfer_credit:12,
+        date:(Date.now()).toString()
     }
 ]
 
+// put users into database
 const putUserIntoDatabase =  (req,res)=>{
-    const {id,name,email,current_credit,transfer_credit,date} = req.body;
+    const {name,email,current_credit,transfer_credit} = req.body;
     const newUser = new User({
-        id,
         name,
         email,
         current_credit,
-        transfer_credit,
-        date
+        transfer_credit
     })
-    User.insertMany(newUser).then(res=>{
+    newUser.save().then(res=>{
          res.status(200).json({message:"successfully created"})
     }).catch(err=>{
         console.log(err);
     })
 }
+
 
 //Get all user
 const getAllUsers = (req,res,next)=>{
@@ -113,6 +123,7 @@ const getUserById = async  (req,res,next) =>{
     }
 
 }
+
 
 exports.getAllUsers = getAllUsers;
 exports.getUserById = getUserById;
