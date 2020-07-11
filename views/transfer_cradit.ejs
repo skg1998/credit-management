@@ -6,6 +6,7 @@
     </div>
     <div class="user">
         <% for(let i = 0; i < transfers.length; i++) { %>
+            <% console.log("the value of event.name hidden field", transfers.id) %>
                 <div class="card " style="margin: 5px;">
                     <div class="card-body">
                         <article>
@@ -23,7 +24,7 @@
                                     <p><b>Transfer_credit: </b> <%= transfers[i].Transfer_credit %></p>
                                 </div>
                                 <div class="col-md-3">
-                                   <p> <b>Transfer_Date:</b> <%= transfers[i].Tansfer_date %> </p>
+                                   <p> <b>Transfer_Date:</b> <%= transfers[i].Transfer_date %> </p>
                                 </div>
                             </div>
                         </article>

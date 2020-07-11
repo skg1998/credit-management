@@ -1,16 +1,13 @@
 
 <div class="container">
-  <h1>Hello User</h1>
-  <!-- <% for(let i = 0; i < users.length; i++) { %>
-    <%  if(users[i].id) { %>
-    <h3><%= users[i].name %></h3>
-    <% } %>
-  <% } %> -->
+  <h1>Hello <%= user[0].name %></h1>
   <p>welcome to you dashboard !</p>
   <div class="card m-3">
     <div class="card-body">
-      <form action="/api/transfer/credit_transfer" method="get">
+      <form action="/api/transfer/credit_transfer/:id" method="get">
         <div class="form-group">
+          <input type="hidden" name="id" value=<%= user[0].id %>>
+          <input type="hidden" name="sender" value=<%= user[0].name %>>
           <input type="number" name="Transfer_credit" placeholder="Enter Credit " class="form-control m-2" >
           <select name="recevier" class="form-control m-2">
             <option>Select Recevier</option>

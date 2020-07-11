@@ -70,6 +70,22 @@ DUMMY_USERS = [
     }
 ]
 
+const putUserIntoDatabase =  (req,res)=>{
+    const {id,name,email,current_credit,transfer_credit,date} = req.body;
+    const newUser = new User({
+        id,
+        name,
+        email,
+        current_credit,
+        transfer_credit,
+        date
+    })
+    User.insertMany(newUser).then(res=>{
+         res.status(200).json({message:"successfully created"})
+    }).catch(err=>{
+        console.log(err);
+    })
+}
 
 //Get all user
 const getAllUsers = (req,res,next)=>{
@@ -90,7 +106,8 @@ const getUserById = async  (req,res,next) =>{
     }
 
     if(user ){
-        res.render('profile',{users : DUMMY_USERS});
+        res.render('profile',{users : DUMMY_USERS ,user:user});
+        console.log(user);
     }else{
         res.json({message:'no user found '})
     }
@@ -99,3 +116,4 @@ const getUserById = async  (req,res,next) =>{
 
 exports.getAllUsers = getAllUsers;
 exports.getUserById = getUserById;
+exports.putUserIntoDatabase=putUserIntoDatabase;

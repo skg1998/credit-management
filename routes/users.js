@@ -8,4 +8,7 @@ router.get('/',userController.getAllUsers);
 //get user by id 
 router.get('/:uid',userController.getUserById);
 
+//put user into database
+router.post('/createUser',userController.putUserIntoDatabase);
+
 module.exports = router;

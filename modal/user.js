@@ -18,16 +18,14 @@ const userShema = new Schema({
        type:Number,
        required:true
    },
-   transfer_credit:{
-       transfer_name:{
-            type:String,
-            required:true
-       },
-       credit:{
-            type:Number,
-            required:true
-       }
-   }
+   Transfer_credit:{
+        type:Number,
+        required:true
+    },
+    date:{
+        type: Date,
+        default: Date.now
+    }
 })
 
 module.exports = mongoose.model('User',userShema);

@@ -15,8 +15,9 @@ app.set('view engine','ejs');
 app.engine('ejs', require('ejs').__express);
 
 //BodyParser
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //Routes
 app.use('/',Index);
@@ -26,13 +27,11 @@ app.use('/api/transfer',Transfer);
 
 //mongoose-database connection
 const mongoURI = 'mongodb://localhost:27017/send-credit';
-mongoose.connect(mongoURI ,{ useUnifiedTopology: true }).then(()=>{
+mongoose.connect(mongoURI ,{ useUnifiedTopology: true, useNewUrlParser: true}).then(()=>{
   console.log("MongoDb connected...")
 }).catch(err=>{
    console.log(err)
   });
-  
-
 
 //listining on port 3000
 app.listen(port,()=>{

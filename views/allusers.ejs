@@ -10,19 +10,23 @@
                 <div class="card " style="margin: 5px;">
                     <div class="card-body">
                         <article>
-                            <h2><%= users[i].name %></h1>
+                            <div class="card" style="margin-bottom: 15px !important;">
+                                <div class="card-body" style="padding: 5px !important;">
+                                    <h2 >User Name: <%= users[i].name %></h1>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <p> <%= users[i].email %></p>
+                                    <p>Email: <%= users[i].email %></p>
                                 </div>
                                 <div class="col-md-3">
-                                    <p>current_credit <%= users[i].current_credit %></p>
+                                    <p>Current_credit: <%= users[i].current_credit %></p>
                                 </div>
                                 <div class="col-md-3">
-                                    <p>transfer_credit <%= users[i].transfer_credit %></p>
+                                    <p>Transfer_credit: <%= users[i].transfer_credit %></p>
                                 </div>
                                 <div class="col-md-3">
-                                    Date
+                                     <p>Created_Date: <%= users[i].transfer_date %></p>
                                 </div>
                             </div>
                         </article>
